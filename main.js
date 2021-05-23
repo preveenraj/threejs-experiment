@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 import { addTorus, animateTorus } from './shapes/torus';
 import { addLight } from './utils/light';
-import { initializeScene } from './utils/init';
+import { animateCamera, initializeScene } from './utils/init';
 import { addStar } from './shapes/stars';
 import { addText } from './shapes/text';
 import { addGrid } from './utils/grid';
@@ -24,9 +24,8 @@ addText(scene);
 function animate() {
   requestAnimationFrame( animate );
   animateTorus();
-
+  animateCamera(camera);
   controls.update();
-
   renderer.render(scene, camera);
 
 }

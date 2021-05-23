@@ -1,6 +1,10 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import spaceImage from '../space.jpeg'
+
+var angle = 0;
+var radius = 20; 
+
 export const initializeScene = () => {
 
   const scene = new THREE.Scene();
@@ -8,7 +12,8 @@ export const initializeScene = () => {
   const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
-
+camera.position.set( -40, 40, 2200 );
+camera.lookAt( 40, 40, 0 );
 camera.position.setZ(80);
 
 renderer.setPixelRatio( window.devicePixelRatio );
@@ -27,3 +32,12 @@ scene.background = spaceTexture;
 
 return { scene, camera, renderer, controls };
 }
+
+
+export const animateCamera = (camera) => {
+  camera.position.x = radius * Math.cos( angle );  
+  camera.position.y = radius * Math.sin( angle );
+  angle += 0.01;
+camera.updateProjectionMatrix();
+
+};
