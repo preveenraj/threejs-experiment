@@ -16,7 +16,7 @@ export const addText = (scene) => {
     } );
     const material = new THREE.MeshStandardMaterial( { color: 0x2980b9} )
   const text = new THREE.Mesh(geometry, material)
-  text.position.set(-30, 0, 0);
+  text.position.set(-30, 5, 0);
 
   scene.add(text)
   } );
