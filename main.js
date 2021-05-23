@@ -16,7 +16,7 @@ const { scene, camera, renderer, controls } = initializeScene();
 
 // addTorus(scene);
 addLight(scene);
-addGrid(scene);
+// addGrid(scene);
 //Add 200 stars in random positions
 Array(200).fill().forEach(() => addStar(scene));
 
