@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-
+import '../helvetiker_regular.typeface.json';
 const loader = new THREE.FontLoader();
 
 export const addText = (scene) => {
