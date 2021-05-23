@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-
+import spaceImage from '../space.jpeg'
 export const initializeScene = () => {
 
   const scene = new THREE.Scene();
@@ -20,7 +20,7 @@ renderer.render(scene, camera);
 const controls = new OrbitControls( camera, renderer.domElement);
 
 //Add Background
-const spaceTexture = new THREE.TextureLoader().load('space.jpeg');
+const spaceTexture = new THREE.TextureLoader().load(spaceImage);
 scene.background = spaceTexture;
 
 

@@ -1,9 +1,8 @@
 import * as THREE from 'three'
-import '../helvetiker_regular.typeface.json';
 const loader = new THREE.FontLoader();
 
 export const addText = (scene) => {
-  loader.load( 'helvetiker_regular.typeface.json', function ( font ) {
+  loader.load( 'https://raw.githubusercontent.com/preveenraj/threejslearn/master/helvetiker_regular.typeface.json', function ( font ) {
     const geometry = new THREE.TextGeometry( 'Preveen Raj', {
       font: font,
       size: 8,
