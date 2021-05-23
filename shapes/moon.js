@@ -1,9 +1,11 @@
 import * as THREE from 'three'
+import moonImage from '../moon.jpeg'
+import normalImage from '../normal.jpeg'
 
 export const addMoon = (scene) => {
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpeg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpeg');
+const moonTexture = new THREE.TextureLoader().load(moonImage);
+const normalTexture = new THREE.TextureLoader().load(normalImage);
 
   const geometry = new THREE.SphereGeometry(3, 32, 32);
   const material = new THREE.MeshStandardMaterial( { map: moonTexture, normalMap: normalTexture } )

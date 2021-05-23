@@ -9,6 +9,7 @@ import { addStar } from './shapes/stars';
 import { addText } from './shapes/text';
 import { addGrid } from './utils/grid';
 import { addMoon } from './shapes/moon';
+import { addCube } from './shapes/cube';
 
 
 const { scene, camera, renderer, controls } = initializeScene();
@@ -21,15 +22,7 @@ Array(200).fill().forEach(() => addStar(scene));
 
 addText(scene);
 addMoon(scene);
-
-const prevTexture = new THREE.TextureLoader().load('preveenraj.png');
-const prev = new THREE.Mesh(
-  new THREE.BoxGeometry(20, 20, 20),
-  new THREE.MeshBasicMaterial( { map: prevTexture })
-);
-prev.position.x = 0;
-prev.position.y = -20;
-scene.add(prev)
+addCube(scene);
 
 
 
